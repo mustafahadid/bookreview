@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/login.css">
+        <style>
+            body, html {
+                height: 100%;
+                }
+            body {
+              background-image: url("static/img.jpg");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+            }
+
+            </style> 
+        <title>login</title>
+       
+    </head>
+    <body>
+        <script type="text/javascript" src="static/login.js"></script>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div class="container">
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 main-section" >
+                <div class="modal-content">
+                    <div class="col-12 user-name">
+                        <h1>User Login</h1>
+                    </div>
+                    
+                    <div class="col-12 form-input">
+                        <form class="needs-validation" action="" method="POST" novalidate>
+                            <div class="form-group">
+                                
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                <div class="invalid-feedback">Please enter your password to continue.</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </form>
+                            
+                    </div>
+                    <div class="col-12 link-part">
+                        <a href="register">Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+         
+    </body>
+</html>

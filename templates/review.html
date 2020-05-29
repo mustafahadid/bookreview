@@ -1,0 +1,77 @@
+<div class="container">
+{% extends 'layout.html' %}
+{% block title %}Review {% endblock %}
+{% block content %}
+
+
+{% for data in data %}
+<form method="POST">
+<div class="row">
+    <div class="col" style="text-align:left; padding: 80px;">
+    <img class="rounded" src="http://covers.openlibrary.org/b/isbn/{{data.isbn}}-M.jpg" /><br>
+    <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </div>
+    <div class="col-sm" style="padding:50px; font-size: small; text-align: justify;">
+                    
+                    <p> Book Title: {{data.title}}</p>
+                    <p>Book ISBN: {{data.isbn}}</p>
+                    <p>Book Author: {{data.author}}</p>
+                    <p>Publication year: {{data.year}}</p>
+                    <p>Average Rating: {{avr}}</p>
+                    <p>Ratings Count: {{rvr}} </p>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Comment</span>
+                        </div>
+                        <textarea class="form-control" name="commenttxt" aria-label="With textarea"></textarea>
+                    </div>
+                    <br>
+                    <button type="submit"  class="btn btn-primary">Submit</button>
+                    
+                                 
+    </div>
+</div>
+</form>
+{% endfor %}
+<div class="page-header">
+    <small class="pull-right">all comments</small>
+</div>
+<br>
+        {% for rating in rating %}
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                          
+                           <div class="comments-list">
+                               <div class="media">
+                        
+                                    <div class="media-body">
+                                        
+                                      <h4 class="media-heading user_name">{{rating.name}}</h4>
+                                        {{rating.comment}}.
+                                      
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+        {% endfor %}
+{% endblock %}
+</div>
+
+

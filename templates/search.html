@@ -1,0 +1,43 @@
+<div class="container">
+{% extends 'layout.html' %}
+{% block title %}Search {% endblock %}
+{% block content %}
+<br>
+<script>
+  function validateForm() {
+  var x = document.forms["searchform"]["q"].value;
+  if (x == "") {
+  alert("plaese  type something");
+  return false;
+}
+} 
+</script>
+<div class="jumbotron">
+  <form name="searchform" method="POST" onsubmit="return validateForm()" action="" required>
+    
+    <div class="form-group">
+      <input type="text" class="form-control" id="q" name="q" placeholder="search">
+      <small id="emailHelp" class="form-text text-muted">Search book by name author or isbn.</small>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form> 
+</div>
+  {% for books in books %}
+  <div class="container-fluid" style="text-align:center;">
+    <div class="row" >
+      <div class="col-sm">
+        <img class="rounded" src="http://covers.openlibrary.org/b/isbn/{{books.isbn}}-M.jpg" />
+      </div>
+      <div class="col-sm" style="padding-top: 100px; font-family: monospace; font-weight: bold;">
+          <h6 class="card-title">ISBN: {{books.isbn}}</h6> 
+          <h6 class="card-title">Book Title: {{books.title}}</h6>
+          <h6 class="card-title">written by  {{books.author}}</h6>
+          <a href="{{ url_for ('review', isbn=books.isbn)}}">Details...</a>
+      </div>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+{% endblock %}
+</div>

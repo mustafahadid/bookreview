@@ -1,0 +1,54 @@
+        #bodynav{ width:1100px; padding:30px 0; margin:0 auto; font-family:Calibri, sans-serif; }
+		.nav{
+			border:1px solid #ccc;
+			border-width:1px 0;
+			list-style:none;
+			margin:0;
+			padding:0;
+            text-align:center;       
+		}
+		.nav li{
+			display:inline;
+		}
+		.nav a{
+			display:inline-block;
+			padding:10px;
+		}
+		a{
+			color:#c00;
+			text-decoration:none;
+			font-weight:bold;
+		}
+		a:hover{
+			text-decoration:underline;
+        }
+        .toggle{
+            width: 100;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 20px;
+            display: none;
+        }
+        @media only screen and (max-width: 700px){
+            .toggle{
+                display: block;
+            }
+            .nav{
+                
+                flex-direction: column;
+                display: none;       
+            }
+            .nav li{
+                display: block;
+                text-align: left;
+            }
+            .nav a{
+                display: block;
+            }
+            .active{
+                display: block;
+            }
+            
+
+        }

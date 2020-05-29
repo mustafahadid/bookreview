@@ -1,0 +1,32 @@
+.main-section{
+    
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+.modal-content{
+    background-color: #6c7a7e;
+}
+.user-name{
+    margin: 10px 0;
+}
+.user-name h1{
+    font-size: 30px;
+    color: #ccd6d7;
+}
+.form-input button{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.btn-success{
+    background-color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+.btn-success:hover{
+    background-color: #27ae60;
+    border: 1px solid #27ae60;
+}
+.link-part{
+    background-color: #ccd6d7;
+    padding: 15px;   
+}

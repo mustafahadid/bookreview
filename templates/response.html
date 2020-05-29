@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        {<br>
+            "title": "{{forview.title}}",<br>
+            "author": "{{forview.author}}",<br>
+            "year": {{forview.year}},<br>
+            {% for countrev in countrev %}
+            "review_count": {{countrev}},<br>
+            {% endfor %}
+            {% for avgrate in avgrate %}
+            "average_score": {{avgrate}}<br>
+            {% endfor %}
+        }
+          
+        
+    </body>
+</html>
